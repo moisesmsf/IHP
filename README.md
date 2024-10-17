@@ -100,3 +100,7 @@ Essas categorias ajudam as organizações a identificar rapidamente o tipo de in
 **5. Atividades Pós-incidente**: Emitir relatórios que detalham a causa, o impacto e o custo do incidente. Essa fase também envolve a revisão de como o incidente foi tratado e a implementação de melhorias para prevenir incidentes futuros.
 
 Para este trabalho, a proposta é focar na fase de **contenção**, demonstrando as técnicas, táticas e procedimentos possíveis para se conter um incidente de segurança cibernética.
+
+
+## Referências
+#### https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf
