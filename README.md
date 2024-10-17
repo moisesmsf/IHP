@@ -87,12 +87,12 @@ Essas categorias ajudam as organizações a identificar rapidamente o tipo de in
 ## Fases do Ciclo de Vida de um Incidente Cibernético
 ### Resumo das Fases do Ciclo de Vida de um Incidente Cibernético segundo o NIST:
 
-#### **Preparação**: Estabelecer e treinar a equipe de resposta a incidentes, adquirir ferramentas e recursos necessários, e implementar controles com base em avaliações de risco para minimizar o número de incidentes.
+**1. Preparação**: Estabelecer e treinar a equipe de resposta a incidentes, adquirir ferramentas e recursos necessários, e implementar controles com base em avaliações de risco para minimizar o número de incidentes.
 
-#### **Detecção e Análise**: Monitorar e identificar possíveis incidentes de segurança. A detecção é crucial para alertar a organização sobre ocorrências de incidentes, e a análise visa entender a natureza e o impacto desses incidentes.
+**2. Detecção e Análise**: Monitorar e identificar possíveis incidentes de segurança. A detecção é crucial para alertar a organização sobre ocorrências de incidentes, e a análise visa entender a natureza e o impacto desses incidentes.
 
-#### **Contenção**: Conter o incidente para limitar seu impacto e impedir que ele se espalhe ou cause mais danos. Em muitos casos, é necessário realizar análises adicionais para identificar se o incidente se propagou para outros sistemas.
+**3. Contenção**: Conter o incidente para limitar seu impacto e impedir que ele se espalhe ou cause mais danos. Em muitos casos, é necessário realizar análises adicionais para identificar se o incidente se propagou para outros sistemas.
 
-#### **Erradicação e Recuperação**: Remover o incidente da rede ou dos sistemas comprometidos, como eliminar malware ou fechar brechas de segurança. Após isso, a organização inicia a fase de recuperação, restaurando os sistemas afetados ao estado normal de operação.
+**4. Erradicação e Recuperação**: Remover o incidente da rede ou dos sistemas comprometidos, como eliminar malware ou fechar brechas de segurança. Após isso, a organização inicia a fase de recuperação, restaurando os sistemas afetados ao estado normal de operação.
 
-#### **Atividades Pós-incidente**: Emitir relatórios que detalham a causa, o impacto e o custo do incidente. Essa fase também envolve a revisão de como o incidente foi tratado e a implementação de melhorias para prevenir incidentes futuros.
+**5. Atividades Pós-incidente**: Emitir relatórios que detalham a causa, o impacto e o custo do incidente. Essa fase também envolve a revisão de como o incidente foi tratado e a implementação de melhorias para prevenir incidentes futuros.
