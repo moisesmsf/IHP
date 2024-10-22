@@ -87,7 +87,7 @@ Essas categorias ajudam as organizações a identificar rapidamente o tipo de in
 ## Fases do Ciclo de Vida de um Incidente Cibernético
 ### Resumo das Fases do Ciclo de Vida de um Incidente Cibernético segundo o NIST:
 
-![alt text](Figura-1-Ciclo-de-vida-de-resposta-a-incidente-do-NIST-Fonte-CICHONSKI-MILLAR-et.png)
+![alt text](Imagens/Figura-1-Ciclo-de-vida-de-resposta-a-incidente-do-NIST-Fonte-CICHONSKI-MILLAR-et.png)
 
 **1. Preparação**: Estabelecer e treinar a equipe de resposta a incidentes, adquirir ferramentas e recursos necessários, e implementar controles com base em avaliações de risco para minimizar o número de incidentes.
 
@@ -103,4 +103,6 @@ Para este trabalho, a proposta é focar na fase de **contenção**, demonstrando
 
 
 ## Referências
-#### https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf
+#### Computer Security Incident Handling Guide (https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf)
+#### Cybersecurity Incident & Vulnerability Response Playbooks (https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf)
+#### FIRST CSIRT Services Framework (https://www.first.org/standards/frameworks/csirts/csirt_services_framework_v2.1)
