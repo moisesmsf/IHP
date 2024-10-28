@@ -48,10 +48,12 @@ Este projeto foi criado com o intuito de **facilitar o desenvolvimento** de solu
 
 ## Uso
 Para iniciar o projeto em modo de desenvolvimento:
-npm run dev
+   ```bash
+   npm run dev
 
 Para compilar o projeto para produção:
-npm run build
+   ```bash
+   npm run build
 
 ## Estrutura de Diretórios
 Abaixo está a estrutura básica de diretórios do projeto:
