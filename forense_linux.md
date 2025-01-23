@@ -54,6 +54,13 @@ Exemplo de criação de imagem forense com dd, onde 'if=' é o disco a ser clona
 dd if=/dev/sdX of=/caminho/para/imagem/disco.img bs=4M status=progress
 ```
 
+Após a criação da imagem, é necessário registrar o hash da imagem recém criada para se garantir sua integridade:
+
+```sh
+$ md5sum disco.img
+$ sha256sum disco.img
+```
+
 **b) Utilizando a ferramenta FTK Imager**
 Exemplo de criação de Imagem Forense com FTK Imager:
 
