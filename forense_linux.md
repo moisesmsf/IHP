@@ -1,17 +1,17 @@
-# Documentação para Apoio na Análise Forense em Abientes Operacionais Linux
+# Documentação para Apoio na Análise Forense em Ambientes Operacionais Linux
 
 ## Ações Forenses Preparatórias
 
 As asções forenses preparatórias visam expor os cuidados necessários para que a coleta das evidências sejam realizadas com o menor impacto para o ambiente analisado, bem como garantir que possíveis artefatos não sejam perdidos durante a análise.
 
-## 1. Garantir a Ingridade das Evidências
+## 1. Garantir a Integridade das Evidências
 Todas as evidências coletadas devem ser rigorosamente catalogadas minimamente com os seguintes dados:
 
 - Nome e descrição da evidência;
 - Data e hora da coleta;
 - Local (físico e virtual) onde a evidência foi coletada;
 - Identificação do analista que coletou as evidências;
-- Qual informação útil para a investigação aquela evidência trás;
+- Qual informação útil para a investigação aquela evidência traz;
 - Hash da evidência e/ou do conjunto de evidências;
 
 
@@ -206,6 +206,11 @@ A seguir, comandos que podem ser utilizados para busca de indícios de intrusão
 ```sh
 cat /var/log/auth.log | grep 'Failed password'
 awk '/Failed password/ {print $1, $2, $3, $9, $11}' /var/log/auth.log
+/var/run/utmp
+/var/log/btmp
+/var/log/lastlog
+last
+umtpdump /var/log/wtmp
 ```
 
 **b) Busca por Logins Bem-Sucedidos**
@@ -215,10 +220,12 @@ grep 'Accepted password' /var/log/auth.log
 awk '/Accepted password/ {print $1, $2, $3, $9, $11}' /var/log/auth.log
 ```
 
-**c) Identificação de Acessos Remotos Suspiciosos**
+**c) Identificação de Acessos Remotos Suspeitos**
 
 ```sh
 grep 'sshd.*session opened' /var/log/auth.log | awk '{print $1, $2, $3, $9, $11}'
+grep -E 'Failed password|session opened|Accepted password' /var/log/auth.log
+journalctl _SYSTEMD_UNIT=ssh.service | egrep "Failed|Failure"
 ```
 
 **d) Detecção de Múltiplas Tentativas de Login**
@@ -237,13 +244,15 @@ awk '/404/ {print $1, $4, $7, $9}' /var/log/nginx/access.log
 **f) Verificação de Acessos ao Cron**
 
 ```sh
-grep CRON /var/log/syslog | awk '{print $1, $2, $3, $6, $9}'
+grep -i CRON /var/log/syslog | awk '{print $1, $2, $3, $6, $9}'
+journalctl -u cron
 ```
 
 **g) Análise de Tentativas de Escalonamento de Privilégio**
 
 ```sh
 grep 'sudo' /var/log/auth.log | grep 'authentication failure'
+grep -E 'useradd|passwd|groupadd|usermod|visudo|sudo' /var/log/auth.log
 ```
 
 **h) Verificação de Mudanças de Configuração**
@@ -269,6 +278,23 @@ tail -f /var/log/auth.log
 ```sh
 grep 'comando' /home/usuario/.bash_history
 cat /home/usuario/.bash_history | grep 'sudo'
+```
+
+**l) Demais Arquivos de Interesse**
+
+```sh
+cat /etc/crontab
+cat /etc/cron.d/*
+cat /var/spool/cron/*
+cat .bash_rc (non-login shells)
+cat .bash_profile (login shells)
+cat /proc/mounts
+cat /etc/exports
+cat /etc/hosts
+cat /etc/resolv.conf
+cat /etc/sudoers
+find / -name 'authorized_keys'
+grep -RPn "(passthru|shell_exec|system|phpinfo|base64_decode|chmod|mkdir|fopen|fclose|readfile|php_uname|eval|exif_read_data|preg_replace) *\(" /var/www
 ```
 
 ---
